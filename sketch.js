@@ -38,7 +38,7 @@ function setup() {
   carryButton = createButton('Carry the calmness with you');
   carryButton.style('font-size', '45px');
   carryButton.size(650, 100);
-  carryButton.position(width / 2 - carryButton.width / 2, height - 100);  // Adjust the y-position to your liking
+  carryButton.position(width / 2 - carryButton.width / 2, height - 200);  // Adjust the y-position to your liking
   carryButton.style('background-color', 'rgba(255, 255, 255, 0.5)');
   carryButton.style('color', 'white');
   carryButton.style('border', 'none');
