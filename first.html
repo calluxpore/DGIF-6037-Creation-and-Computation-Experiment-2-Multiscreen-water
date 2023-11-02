@@ -1,3 +1,4 @@
+<!-- FIRST.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,17 +19,18 @@
         }
         header {
             text-align: center;
-            padding-top: 15%;  /* Adjusted padding */
+            padding-top: 5%;  /* Adjusted padding */
             padding-bottom: 1em;
         }
         main {
-            padding: 0 2em;
+            padding: 0 1em;  /* Adjusted padding */
             text-align: center;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            overflow-y: auto;  /* Added to allow scrolling within main content */
         }
         footer {
             padding: 1em;
@@ -42,6 +44,10 @@
             border-radius: 25px;
             font-size: 1em;
             cursor: pointer;
+        }
+        p {
+            margin: 0.5em 0;  /* Adjusted margin */
+            font-size: 0.9em;  /* Adjusted font size */
         }
     </style>
 </head>
