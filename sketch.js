@@ -53,6 +53,13 @@ function windowResized() {
   syncWithUniversalTime();
 }
 
+function windowResized() {
+ // console.log('windowWidth:', windowWidth, 'windowHeight:', windowHeight);
+  resizeCanvas(windowWidth, windowHeight);
+  // ... rest of your code
+}
+
+
 function draw() {
   if (isTransitioning && permissionGranted) {
     let currentTime = millis();
