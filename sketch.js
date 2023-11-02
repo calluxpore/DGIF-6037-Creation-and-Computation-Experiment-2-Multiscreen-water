@@ -25,13 +25,13 @@ function setup() {
   // Create permission button for iOS devices
   permissionButton = createButton('START');
   permissionButton.position(width / 2 - 50, height / 2 - 15);
-  permissionButton.size(100, 30);
-  permissionButton.style('font-size', '20px');
+  permissionButton.size(180, 60);
+  permissionButton.style('font-size', '40px');
   permissionButton.style('font-family', 'Arial');
   permissionButton.style('color', ' black');
   permissionButton.style('background-color', 'white');
   permissionButton.style('border', 'none');
-  permissionButton.style('border-radius', '15px');
+  permissionButton.style('border-radius', '40px');
   permissionButton.mousePressed(requestPermission);
 
  // Create the "Carry the calmness with you" button
@@ -50,6 +50,7 @@ carryButton.mousePressed(() => {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   carryButton.position(width / 2 - carryButton.width / 2, height - 100);  // Adjust the y-position to your liking
+  permissionButton.position(width / 2 - 50, height / 2 - 15);  // Update the position of permissionButton
 }
 
   // Sync with universal time
