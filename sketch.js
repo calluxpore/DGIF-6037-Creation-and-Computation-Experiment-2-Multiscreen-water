@@ -22,23 +22,24 @@ function setup() {
   currentColor = color(0); // Start with grey
   background(currentColor); // Set initial background
 
-  // Create permission button for iOS devices
-  permissionButton = createButton('START');
-  permissionButton.position(width / 2 - 50, height / 2 - 15);
-  permissionButton.size(180, 60);
-  permissionButton.style('font-size', '40px');
-  permissionButton.style('font-family', 'Arial');
-  permissionButton.style('color', ' black');
-  permissionButton.style('background-color', 'white');
-  permissionButton.style('border', 'none');
-  permissionButton.style('border-radius', '40px');
-  permissionButton.mousePressed(requestPermission);
+// Create permission button for iOS devices
+permissionButton = createButton('START');
+let xPosPermission = width / 2 - 200 / 2;  // Central x-position based on permissionButton width
+permissionButton.position(xPosPermission, height / 2 - permissionButton.height / 2);  // Updated position
+permissionButton.style('font-size', '45px');  // Matched font size
+permissionButton.size(200, 70);  // Matched size
+permissionButton.style('background-color', 'rgba(255, 255, 255, 0.5)');  // Matched background color
+permissionButton.style('color', 'white');  // Matched text color
+permissionButton.style('border', 'none');  // Matched border
+permissionButton.style('border-radius', '100px');  // Matched border radius
+permissionButton.mousePressed(requestPermission);
 
- // Create the "Carry the calmness with you" button
+// Create the "Carry the calmness with you" button
 carryButton = createButton('Carry the calmness with you');
 carryButton.style('font-size', '45px');
 carryButton.size(650, 100);
-carryButton.position(width / 2 - carryButton.width / 2, height - 200);  // Adjust the y-position to your liking
+let xPosCarry = width / 2 - 650 / 2;  // Central x-position based on carryButton width
+carryButton.position(xPosCarry, height - 200);  // Adjust the y-position to your liking
 carryButton.style('background-color', 'rgba(255, 255, 255, 0.5)');
 carryButton.style('color', 'white');
 carryButton.style('border', 'none');
@@ -49,9 +50,12 @@ carryButton.mousePressed(() => {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  carryButton.position(width / 2 - carryButton.width / 2, height - 100);  // Adjust the y-position to your liking
-  permissionButton.position(width / 2 - 50, height / 2 - 15);  // Update the position of permissionButton
+  xPosPermission = width / 2 - 200 / 2;  // Update x-position on window resize
+  xPosCarry = width / 2 - 650 / 2;  // Update x-position on window resize
+  carryButton.position(xPosCarry, height - 100);  // Adjust the y-position to your liking
+  permissionButton.position(xPosPermission, height / 2 - permissionButton.height / 2);  // Updated position of permissionButton
 }
+
 
   // Sync with universal time
   syncWithUniversalTime();
