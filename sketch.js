@@ -34,13 +34,15 @@ function setup() {
   permissionButton.style('border-radius', '15px');
   permissionButton.mousePressed(requestPermission);
 
-// Create the "Carry the calmness with you" button
-carryButton = createButton('Carry the calmness with you');
-carryButton.position(width / 2 - carryButton.width / 2, height - 100);  // Adjust the y-position to your liking
-carryButton.style('background-color', 'rgba(255, 255, 255, 0.5)');
-carryButton.style('color', 'white');
-carryButton.style('border', 'none');
-carryButton.style('border-radius', '15px');
+  // Create the "Carry the calmness with you" button
+  carryButton = createButton('Carry the calmness with you');
+  carryButton.style('font-size', '20px');
+  carryButton.size(300, 50);
+  carryButton.position(width / 2 - carryButton.width / 2, height - 100);  // Adjust the y-position to your liking
+  carryButton.style('background-color', 'rgba(255, 255, 255, 0.5)');
+  carryButton.style('color', 'white');
+  carryButton.style('border', 'none');
+  carryButton.style('border-radius', '45px');
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
