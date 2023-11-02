@@ -6,6 +6,7 @@ let cycleDuration = 20000; // Total cycle duration (20 seconds)
 let waveSound; // Variable to hold our sound file
 let permissionGranted = false;
 let permissionButton;
+let carryButton;
 
 function preload() {
   // Load the sound file
@@ -31,9 +32,15 @@ function setup() {
   permissionButton.style('background-color', 'white');
   permissionButton.style('border', 'none');
   permissionButton.style('border-radius', '15px');
-  
-
   permissionButton.mousePressed(requestPermission);
+
+// Create the "Carry the calmness with you" button
+carryButton = createButton('Carry the calmness with you');
+carryButton.position(width / 2 - carryButton.width / 2, height - 50);  // Adjust the y-position to your liking
+carryButton.style('background-color', 'rgba(255, 255, 255, 0.5)');
+carryButton.style('color', 'white');
+carryButton.style('border', 'none');
+carryButton.style('border-radius', '15px');
 
   // Sync with universal time
   syncWithUniversalTime();
