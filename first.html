@@ -14,23 +14,20 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            height: 100vh;
+            height: 100vh;  /* Full height of the viewport */
             justify-content: space-between;
         }
         header {
             text-align: center;
-            padding-top: 5%;  /* Adjusted padding */
-            padding-bottom: 1em;
+            padding: 5%;  /* Reduced padding */
         }
         main {
-            padding: 0 1em;  /* Adjusted padding */
+            padding: 1em;  /* Reduced padding */
             text-align: center;
-            flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            overflow-y: auto;  /* Added to allow scrolling within main content */
         }
         footer {
             padding: 1em;
@@ -42,12 +39,17 @@
             padding: 10px 20px;
             border: none;
             border-radius: 25px;
-            font-size: 1em;
+            font-size: 0.8em;  /* Reduced font size */
             cursor: pointer;
         }
+        h1 {
+            margin-top: 10%;  /* Adjusted margin-top */
+            margin-bottom: 0.5em;
+            font-size: 4em;
+        }
         p {
-            margin: 0.5em 0;  /* Adjusted margin */
-            font-size: 0.9em;  /* Adjusted font size */
+            margin: 0.2em 0;  /* Reduced margin */
+            font-size: 2em;  /* Reduced font size */
         }
     </style>
 </head>
@@ -59,7 +61,7 @@
         <p>Sit and take a few breaths.</p>
         <p>Remove your coat,</p>
         <p>and put down your bag;</p>
-        <p>if you are able, remove your shoes and place <br> them under your chair</p>
+        <p>if you are able, remove your shoes and place them under your chair</p>
     </main>
     <footer>
         <a href="second.html"><button>Next</button></a>
