@@ -6,6 +6,7 @@ let cycleDuration = 20000; // Total cycle duration (20 seconds)
 let waveSound; // Variable to hold our sound file
 let permissionGranted = false;
 let permissionButton;
+let carryButton;
 
 function preload() {
   // Load the sound file
@@ -27,13 +28,19 @@ function setup() {
   permissionButton.size(100, 30);
   permissionButton.style('font-size', '20px');
   permissionButton.style('font-family', 'Arial');
-  permissionButton.style('color', ' black');
+  permissionButton.style('color', 'black');
   permissionButton.style('background-color', 'white');
   permissionButton.style('border', 'none');
   permissionButton.style('border-radius', '15px');
-  
-
   permissionButton.mousePressed(requestPermission);
+
+  // Create the "Carry the calmness with you" button
+  carryButton = createButton('Carry the calmness with you');
+  carryButton.position(width / 2 - carryButton.width / 2, height - 50);  // Adjust the y-position to your liking
+  carryButton.style('background-color', 'rgba(255, 255, 255, 0.5)');
+  carryButton.style('color', 'white');
+  carryButton.style('border', 'none');
+  carryButton.style('border-radius', '10px');
 
   // Sync with universal time
   syncWithUniversalTime();
@@ -60,6 +67,10 @@ function draw() {
   background(currentColor); // Set the background color based on the lerp
 }
 
+function startSketch() {
+  // Your code to start the sketch goes here
+}
+
 function requestPermission() {
   if (getAudioContext().state !== 'running') {
     getAudioContext().resume();
@@ -74,6 +85,8 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   // Update the permission button position
   permissionButton.position(width / 2 - permissionButton.width / 2, height / 2 - permissionButton.height / 2);
+  // Update the "Carry the calmness with you" button position
+  carryButton.position(width / 2 - carryButton.width / 2, height - 50);
 }
 
 function syncWithUniversalTime() {
