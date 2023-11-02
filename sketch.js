@@ -10,7 +10,7 @@ let permissionButton;
 function preload() {
   // Load the sound file
   soundFormats('mp3', 'ogg');
-  waveSound = loadSound('*1- Water.mp3');
+  waveSound = loadSound('water.mp3');
 }
 
 function setup() {
