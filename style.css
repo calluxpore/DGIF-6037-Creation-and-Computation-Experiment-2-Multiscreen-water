@@ -1,7 +1,16 @@
-html, body {
-  margin: 0;
-  padding: 0;
-}
-canvas {
-  display: block;
-}
+<style>
+    /* Existing CSS rules... */
+
+    footer {
+        padding: 1em;
+        padding-bottom: 5%;  /* Reduced padding-bottom */
+        text-align: center;
+    }
+
+    /* Add a media query for smaller screens */
+    @media (max-width: 600px) {
+        footer {
+            padding-bottom: 2%;  /* Further reduce padding-bottom for small screens */
+        }
+    }
+</style>
