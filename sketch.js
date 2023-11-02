@@ -36,13 +36,13 @@ function setup() {
 
   // Create the "Carry the calmness with you" button
   carryButton = createButton('Carry the calmness with you');
-  carryButton.style('font-size', '20px');
-  carryButton.size(300, 50);
+  carryButton.style('font-size', '45px');
+  carryButton.size(650, 100);
   carryButton.position(width / 2 - carryButton.width / 2, height - 100);  // Adjust the y-position to your liking
   carryButton.style('background-color', 'rgba(255, 255, 255, 0.5)');
   carryButton.style('color', 'white');
   carryButton.style('border', 'none');
-  carryButton.style('border-radius', '45px');
+  carryButton.style('border-radius', '100px');
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
