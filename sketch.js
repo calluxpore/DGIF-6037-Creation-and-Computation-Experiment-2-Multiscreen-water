@@ -17,52 +17,52 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   colorMode(RGB);
-  blueColor = color(248,156,49); // Orange color
+  blueColor = color(248, 156, 49); // Orange color
   whiteColor = color(255); // White color
   currentColor = color(0); // Start with grey
   background(currentColor); // Set initial background
 
-// Create permission button for iOS devices
-permissionButton = createButton('START');
-let xPosPermission = width / 2 - 200 / 2;  // Central x-position based on permissionButton width
-permissionButton.position(xPosPermission, height / 2 - permissionButton.height / 2);  // Updated position
-permissionButton.style('font-size', '45px');  // Matched font size
-permissionButton.size(200, 70);  // Matched size
-permissionButton.style('background-color', 'rgba(255, 255, 255, 0.5)');  // Matched background color
-permissionButton.style('color', 'white');  // Matched text color
-permissionButton.style('border', 'none');  // Matched border
-permissionButton.style('border-radius', '100px');  // Matched border radius
-permissionButton.mousePressed(requestPermission);
+  // Create permission button for iOS devices
+  permissionButton = createButton('START');
+  let xPosPermission = width / 2 - 200 / 2;  // Central x-position based on permissionButton width
+  permissionButton.position(xPosPermission, height / 2 - permissionButton.height / 2);  // Updated position
+  permissionButton.style('font-size', '45px');  // Matched font size
+  permissionButton.size(200, 70);  // Matched size
+  permissionButton.style('background-color', 'rgba(255, 255, 255, 0.5)');  // Matched background color
+  permissionButton.style('color', 'white');  // Matched text color
+  permissionButton.style('border', 'none');  // Matched border
+  permissionButton.style('border-radius', '100px');  // Matched border radius
+  permissionButton.mousePressed(requestPermission);
 
-// ... rest of your code
+  // ... rest of your code
 
-// Create the "Carry the calmness with you" button
-carryButton = createButton('Carry the calmness with you');
-carryButton.style('font-size', '45px');
-carryButton.size(650, 100);
-let xPosCarry = width / 2 - 650 / 2;  // Central x-position based on carryButton width
-carryButton.position(xPosCarry, height - 200);  // Adjust the y-position to your liking
-carryButton.style('background-color', 'rgb(169, 169, 169)');  // Set background color to grey
-carryButton.style('color', 'white');
-carryButton.style('border', 'none');
-carryButton.style('border-radius', '100px');
-carryButton.mousePressed(() => {
+  // Create the "Carry the calmness with you" button
+  carryButton = createButton('Carry the calmness with you');
+  carryButton.style('font-size', '45px');
+  carryButton.size(650, 100);
+  let xPosCarry = width / 2 - 650 / 2;  // Central x-position based on carryButton width
+  carryButton.position(xPosCarry, height - 200);  // Adjust the y-position to your liking
+  carryButton.style('background-color', 'rgb(169, 169, 169)');  // Set background color to grey
+  carryButton.style('color', 'white');
+  carryButton.style('border', 'none');
+  carryButton.style('border-radius', '100px');
+  carryButton.mousePressed(() => {
     window.location.href = 'fifth.html';
-});
-carryButton.hide();  // Initially hide the button
+  });
+  carryButton.hide();  // Initially hide the button
 
-// Schedule to show the button after 1 minute
-setTimeout(() => {
-  carryButton.show();
-}, 60000);
+  // Schedule to show the button after 1 minute
+  setTimeout(() => {
+    carryButton.show();
+  }, 60000);
 
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-  xPosPermission = width / 2 - 200 / 2;  // Update x-position on window resize
-  xPosCarry = width / 2 - 650 / 2;  // Update x-position on window resize
-  carryButton.position(xPosCarry, height - 100);  // Adjust the y-position to your liking
-  permissionButton.position(xPosPermission, height / 2 - permissionButton.height / 2);  // Updated position of permissionButton
-}
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+    xPosPermission = width / 2 - 200 / 2;  // Update x-position on window resize
+    xPosCarry = width / 2 - 650 / 2;  // Update x-position on window resize
+    carryButton.position(xPosCarry, height - 100);  // Adjust the y-position to your liking
+    permissionButton.position(xPosPermission, height / 2 - permissionButton.height / 2);  // Updated position of permissionButton
+  }
 
 
   // Sync with universal time
@@ -70,7 +70,7 @@ function windowResized() {
 }
 
 function windowResized() {
- // console.log('windowWidth:', windowWidth, 'windowHeight:', windowHeight);
+  // console.log('windowWidth:', windowWidth, 'windowHeight:', windowHeight);
   resizeCanvas(windowWidth, windowHeight);
   // ... rest of your code
 }
@@ -80,7 +80,7 @@ function draw() {
   if (isTransitioning && permissionGranted) {
     let currentTime = millis();
     let timeSinceLastTransition = currentTime - lastTransitionTime;
-    
+
     if (timeSinceLastTransition <= fadeDuration) {
       // Transition from blue to white
       currentColor = lerpColor(blueColor, whiteColor, map(timeSinceLastTransition, 0, fadeDuration, 0, 1));
@@ -88,12 +88,12 @@ function draw() {
       // Transition from white to blue
       currentColor = lerpColor(whiteColor, blueColor, map(timeSinceLastTransition - fadeDuration, 0, cycleDuration - fadeDuration, 0, 1));
     }
-    
+
     if (timeSinceLastTransition >= cycleDuration) {
       lastTransitionTime = currentTime;
     }
   }
-  
+
   background(currentColor); // Set the background color based on the lerp
 }
 
@@ -116,7 +116,7 @@ function windowResized() {
 function syncWithUniversalTime() {
   let currentSeconds = second(); // Get the current second
   let currentMillis = millis() % 1000; // Get the milliseconds part of the current time
-  
+
   // Calculate how many milliseconds until the next 20-second mark
   let secondsUntilNextTransition = (20 - currentSeconds % 20) % 20;
   let msUntilNextTransition = secondsUntilNextTransition * 1000 - currentMillis;
