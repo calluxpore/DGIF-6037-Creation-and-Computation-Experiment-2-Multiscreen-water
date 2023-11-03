@@ -26,7 +26,7 @@ function setup() {
   permissionButton = createButton('START');
   let xPosPermission = width / 2 - 200 / 2;  // Central x-position based on permissionButton width
   permissionButton.position(xPosPermission, height / 2 - permissionButton.height / 2);  // Updated position
-  permissionButton.style('font-size', '4em');  // Matched font size
+  permissionButton.style('font-size', '5em');  // Matched font size
   permissionButton.style('padding', '40px 80px');  // Matched padding to adjust size
   permissionButton.style('background-color', 'white');  // Matched background color
   permissionButton.style('color', 'black');  // Matched text color
