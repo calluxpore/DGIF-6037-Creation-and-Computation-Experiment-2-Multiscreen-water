@@ -34,19 +34,27 @@ permissionButton.style('border', 'none');  // Matched border
 permissionButton.style('border-radius', '100px');  // Matched border radius
 permissionButton.mousePressed(requestPermission);
 
+// ... rest of your code
+
 // Create the "Carry the calmness with you" button
 carryButton = createButton('Carry the calmness with you');
 carryButton.style('font-size', '45px');
 carryButton.size(650, 100);
 let xPosCarry = width / 2 - 650 / 2;  // Central x-position based on carryButton width
 carryButton.position(xPosCarry, height - 200);  // Adjust the y-position to your liking
-carryButton.style('background-color', 'rgba(255, 255, 255, 0.5)');
+carryButton.style('background-color', 'rgb(169, 169, 169)');  // Set background color to grey
 carryButton.style('color', 'white');
 carryButton.style('border', 'none');
 carryButton.style('border-radius', '100px');
 carryButton.mousePressed(() => {
     window.location.href = 'fifth.html';
 });
+carryButton.hide();  // Initially hide the button
+
+// Schedule to show the button after 1 minute
+setTimeout(() => {
+  carryButton.show();
+}, 60000);
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
