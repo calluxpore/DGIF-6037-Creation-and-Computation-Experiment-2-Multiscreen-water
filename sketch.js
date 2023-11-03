@@ -26,15 +26,14 @@ function setup() {
   permissionButton = createButton('START');
   let xPosPermission = width / 2 - 200 / 2;  // Central x-position based on permissionButton width
   permissionButton.position(xPosPermission, height / 2 - permissionButton.height / 2);  // Updated position
-  permissionButton.style('font-size', '45px');  // Matched font size
-  permissionButton.size(200, 70);  // Matched size
-  permissionButton.style('background-color', 'rgba(255, 255, 255, 0.5)');  // Matched background color
-  permissionButton.style('color', 'white');  // Matched text color
+  permissionButton.style('font-size', '2em');  // Matched font size
+  permissionButton.style('padding', '20px 40px');  // Matched padding to adjust size
+  permissionButton.style('background-color', 'white');  // Matched background color
+  permissionButton.style('color', 'black');  // Matched text color
   permissionButton.style('border', 'none');  // Matched border
-  permissionButton.style('border-radius', '100px');  // Matched border radius
+  permissionButton.style('border-radius', '40px');  // Matched border radius
+  permissionButton.style('cursor', 'pointer');  // Matched cursor style
   permissionButton.mousePressed(requestPermission);
-
-  // ... rest of your code
 
   // Create the "Carry the calmness with you" button
   carryButton = createButton('Carry the calmness with you');
