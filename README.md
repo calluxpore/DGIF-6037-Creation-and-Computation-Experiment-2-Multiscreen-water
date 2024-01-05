@@ -21,8 +21,8 @@ This web-based interactive guide, developed by Team B (Orus, Valen, Carol, Samar
 
 ## Links
 
-- [Live Demo](https://calluxpore.github.io/DGIF-6037-Creation-and-Computation-Experiment-2-Multiscreen-gulls/)
-- [GitHub Repository](https://github.com/calluxpore/DGIF-6037-Creation-and-Computation-Experiment-2-Multiscreen-gulls)
+- [Live Demo](https://calluxpore.github.io/DGIF-6037-Creation-and-Computation-Experiment-2-Multiscreen-water/)
+- [GitHub Repository](https://github.com/calluxpore/DGIF-6037-Creation-and-Computation-Experiment-2-Multiscreen-water)
 
 ## Getting Started
 
